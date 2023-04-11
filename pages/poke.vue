@@ -16,7 +16,7 @@
             <button>
                 <p> <b>Squirtle</b> </p>
             </button>
-            <!-- <p> <b>Squirtle</b> </p> -->
+         
             
         </div>
 
@@ -27,7 +27,7 @@
 
 <style>
 *{
-    padding: 0%;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -87,6 +87,10 @@ button{
     height: 40px;
     width: 100px;
     margin-left: 80px;
+}
+button p:hover{
+    color: rgb(43, 128, 202);
+  
 }
 </style>
 
