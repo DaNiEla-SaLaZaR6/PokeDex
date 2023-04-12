@@ -1,11 +1,20 @@
 <template>
+
+
+  <nuxt-link :to=nombre>
+
     <div class="tarjeta" >
-        <div class="imag"><img :src=url alt=""></div>
-          <p class="nom"> <b> {{ nombre }}</b> </p>
-        
+      <div class="imag"><img :src=url alt=""></div>
+        <p class="nom"> <b> {{ nombre }}</b> </p>
+      
 
 
-    </div>
+  </div>
+
+
+  </nuxt-link>
+  
+
     
         
     
@@ -30,19 +39,53 @@ export default {
 </script>
 <style>
 .tarjeta {
-    height: 330px;
-    width: 295px;
-    margin-left: 30px;
-    margin-top: 20px;
-    border: solid 5px white;
+    height: 350px;
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border: solid 5px rgb(251, 244, 249);
     border-radius: 5px;
     background-color: red;
-    box-shadow: 4px 5px 4px 5px rgba(0, 0, 0, 0.466);
+    box-shadow: 3px 3px 3px 4px rgba(32, 30, 30, 0.652);
     display: flex;
     justify-content: center;
- 
     flex-direction: column;
+    animation: fondo 4s linear infinite;
   }
+  @keyframes fondo {
+    0%{
+      background-color: rgba(179, 61, 38, 0.905);
+    }
+    10%{
+      background-color: rgba(206, 112, 23, 0.819);
+    }
+    20%{
+      background-color: rgb(234, 162, 18);
+    }
+    30%{
+      background-color: rgb(93, 190, 20);
+    }
+    40%{
+      background-color: rgb(24, 174, 124);
+    }
+    50%{
+      background-color: rgb(21, 83, 198);
+    }
+    70%{
+      background-color: rgb(76, 0, 255);
+    }
+    80%{
+      background-color: rgb(186, 28, 192);
+    }
+    90%{
+      background-color: rgb(205, 22, 114);
+    }
+    100%{
+      background-color: rgb(200, 17, 60);
+    }
+    
+  }
+
   
 .tarjeta p {
     color: white;
