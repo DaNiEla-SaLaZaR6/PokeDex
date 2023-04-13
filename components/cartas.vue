@@ -4,7 +4,8 @@
   <nuxt-link :to=nombre>
 
     <div class="tarjeta" >
-      <div class="imag"><img :src=url alt=""></div>
+      
+      <div class="imag"><img :src=url alt="" class="imaagee"></div>
         <p class="nom"> <b> {{ nombre }}</b> </p>
       
 
@@ -39,18 +40,18 @@ export default {
 </script>
 <style>
 .tarjeta {
-    height: 350px;
-    width: 300px;
-    margin-left: 70px;
-    margin-top: 30px;
+    height: 450px;
+    width: 330px;
+    margin: 25px;
     border: solid 5px rgb(251, 244, 249);
     border-radius: 5px;
-    background-color: red;
     box-shadow: 3px 3px 3px 4px rgba(32, 30, 30, 0.652);
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    animation: fondo 4s linear infinite;
+    background-color: rgba(255, 0, 0, 0.653);
+    animation: fondo 3s linear infinite;
   }
   @keyframes fondo {
     0%{
@@ -93,14 +94,15 @@ export default {
     font-size: 25px;
 }
 img{
+
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-
 }
 
+.nom{
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+
+}
 
   
 
