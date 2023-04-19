@@ -1,7 +1,8 @@
 <template>
+  <div>
+    <loading v-if="login"/>
 
-
-  <div class="principal">
+  <div class="principal" v-else>
    
     <div class="vacio"></div>
 
@@ -38,11 +39,14 @@
 
 
   </div>
+  </div>
 
 
 </template>
 
 <script>
+
+
 
 
 
@@ -54,12 +58,12 @@ export default {
             response: [],
             buscar: "",
             contador: 1,
-            nuevologin: true
+            login: true
         };
     },
     mounted() {
         this.getinfo(),
-            this.encontrar();
+        this.encontrar()
     },
     methods: {
         async getinfo() {
@@ -69,7 +73,8 @@ export default {
                     for (let i = 1; i < 20; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                    
                     }
                 }
                 else if (this.contador == 2) {
@@ -77,7 +82,8 @@ export default {
                     for (let i = 20; i < 40; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                  
                     }
                 }
                 else if (this.contador == 3) {
@@ -85,7 +91,8 @@ export default {
                     for (let i = 40; i < 60; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+          
                     }
                 }
                 else if (this.contador == 4) {
@@ -93,7 +100,8 @@ export default {
                     for (let i = 60; i < 80; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                
                     }
                 }
                 else if (this.contador == 5) {
@@ -101,7 +109,8 @@ export default {
                     for (let i = 80; i < 100; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                  
                     }
                 }
                 else if (this.contador == 6) {
@@ -109,7 +118,8 @@ export default {
                     for (let i = 100; i < 120; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                  
                     }
                 }
                 else if (this.contador == 7) {
@@ -117,7 +127,8 @@ export default {
                     for (let i = 120; i < 140; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                    
                     }
                 }
                 else if (this.contador == 8) {
@@ -125,7 +136,8 @@ export default {
                     for (let i = 140; i < 160; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+              
                     }
                 }
                 else if (this.contador == 9) {
@@ -133,15 +145,17 @@ export default {
                     for (let i = 160; i < 180; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+                
                     }
                 }
                 else if (this.contador == 10) {
                     this.response = [];
-                    for (let i = 200; i < 120; i++) {
+                    for (let i = 200; i < 220; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+
                     }
                 }
                 else if (this.contador == 11) {
@@ -149,7 +163,8 @@ export default {
                     for (let i = 220; i < 240; i++) {
                         const { data } = await this.$axios.get(`pokemon/${i}`);
                         this.response.push(data);
-                        console.log(data);
+                        this.login=false;
+       
                     }
                 }
             }
@@ -166,13 +181,15 @@ export default {
         sumar() {
             this.contador++;
             this.getinfo();
+            this.response=[]
         },
         restar() {
             this.contador--;
             this.getinfo();
+            this.response=[]
         }
     },
-    components: { Nuevologin }
+
 }
 </script>
 
